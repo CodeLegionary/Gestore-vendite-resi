@@ -3,15 +3,15 @@
 ## Sommario
 1. Inventario
 2. Introduzione
-3. Struttura
+3. Struttura Operativa
 4. Funzionalità e comandi
 5. Istruzioni per l'uso  
 5.1 Guida alla creazione del file .jar  
 5.2 Guida all'esecuzione dell'applicazione  
 
 ## 1. Inventario
- La cartella src contiene al suo interno i files sorgente (JAVA) e  i files di lettura (CSV). In particolare il percorso main\java\org\javabasics contiene il codice dell'applicazione principale. Allo stesso livello di main è inclusa una cartella test, dove è presente un insimeme di sottocartelle in cui dei files .java dimostrano che l'ambiente di testing è preimpostato e funzionante.  
-Come anticipato la cartella src contiene 3 files di lettura .csv. Questi sono salvati nella cartella assets, che si trova nell'apposito percorso src/main/resources. Questa struttura è stata scelta poichè in perfetta armonia con Apache Maven.
+ La cartella src contiene al suo interno i files sorgente (JAVA) e  3 files di lettura (CSV). In particolare il percorso main\java\org\javabasics contiene il codice dell'applicazione principale. Allo stesso livello di main è inclusa una cartella test, dove è presente un insieme di sottocartelle in cui dei files .java dimostrano che l'ambiente di testing è preimpostato e funzionante.  
+Come anticipato la cartella src contiene anche 3 files di lettura .csv. Questi sono salvati nella cartella assets, che si trova nell'apposito percorso src/main/resources. Questa struttura interna è stata scelta poichè in perfetta armonia con Apache Maven.
 La directory principale presenta infatti un project object model (pom.xml) per la configurazione. A concludere il quadro abbiamo il seguente README.md e un file .gitignore.
 
 ## 2. Introduzione
@@ -26,7 +26,7 @@ L'architettura del progetto segue il pattern a tre livelli: Presentation, Busine
 ## 3. Struttura Operativa
  - START: la parte che avvia il sistema è contenuto in App.java.
  - BUSINESS LOGIC: il service contiene il singleton Service.java strutturato per l'esecuzione del programma in una maniera sicura e fruibile.  
- - PRESENTATION: altra parte fondamentale del sistema è il package controller, che contiene a sua volta la classe Controller.java, la vera e propria interfaccia con l'utente. Controller ha un constructor che integra la chiamata ad un metodo esterno per la formulazione dell'istanza di tipo Service.
+ - PRESENTATION: altra parte fondamentale del sistema è il package controller, che contiene a sua volta la classe Controller.java, la vera e propria interfaccia con l'utente. Controller ha un constructor che integra la chiamata ad un metodo pubblico esterno per la formulazione dell'istanza di tipo Service.
  - DATA ACCESS: la business logic del singleton Service delega il data access al package model, facendo da tramite tra questo e il controller. In model è contenuto il modello operazionale del sistema con 5 classi principali, e un enum Operazione.java, destinato alla definizione dei 5 metodi principali: panoramica, acquisto, restituzione, registrazione, e esportazione.
 
 ## 4. Funzionalità e comandi
@@ -51,12 +51,12 @@ Per creare il file JAR dal nome application.jar, specificato nel pom.xml, da ter
 In alternativa si possono chiamare i seguenti comandi, uno per volta:
  - mvn clean: Rimuove tutti i file generati dalle build precedenti, o autogenerati dall'IDE.
  - mvn compile: Compila il codice sorgente del progetto vero e proprio dando luogo al bytecode relativo (i.e. .class).
- - mvn test compile: Compila il codice relativo al testing generando l'apposito bytecode
+ - mvn test compile: Compila il codice relativo al testing generando l'apposito bytecode.
  - mvn package: crea il file .jar.
 
  N.B: Se non si dispone di Maven o di JDK, è necessario installare separatamente un pacchetto JDK e Maven. Assicurarsi che la variabile d'ambiente JAVA_HOME punti alla directory di installazione del JDK, creare una variabile d'ambiente MAVEN_HOME che punti alla directory di Maven estratta e aggiungere il percorso MAVEN_HOME\bin alla variabile d'ambiente PATH per poter eseguire i comandi Maven da qualsiasi directory.
  Oppure puoi installare Maven direttamente dall'IDE di tuo gradimento (e.g. IntelliJ IDEA o VSC).
 
  ### 5.2 Guida all'esecuzione del file .jar
- L'esecuzione dell'applicazione è a questo punto il passo più banale, e può avvenire tanto da terminale quanto da IDE.
+ L'esecuzione dell'applicazione è a questo punto il passo più banale, e può avvenire tanto da terminale quanto dall'IDE.
  Nel nostro caso se volessimo operare da terminale basterebbe usare la stringa 'java -jar application.jar' direttamente dalla directory in cui si trova il file (i.e. target). Ciò non toglie ovviamente che l'opzione di fare il build e il run dei files da IDE resta comunque valida.
