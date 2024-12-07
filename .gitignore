@@ -1,0 +1,13 @@
+# IntelliJ IDEA
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Java
+*.class
+*.jar
+
+# Maven
+target/
+
