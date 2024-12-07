@@ -59,4 +59,4 @@ In alternativa si possono chiamare i seguenti comandi, uno per volta:
 
  ### 5.2 Guida all'esecuzione del file .jar
  L'esecuzione dell'applicazione è a questo punto il passo più banale, e può avvenire tanto da terminale quanto da IDE.
- Nel nostro caso se volessimo operare da terminale basterebbe usare la stringa 'java -jar application.jar' direttamente dalla directory in cui si trova il file (i.e. target). Altrimenti da IDE si può aprire l'intero folder come un progetto e lanciare il build, così da proseguire nell'inserimento dei dati da terminale (integrato o esterno).
+ Nel nostro caso se volessimo operare da terminale basterebbe usare la stringa 'java -jar application.jar' direttamente dalla directory in cui si trova il file (i.e. target). Ciò non toglie ovviamente che l'opzione di fare il build e il run dei files da IDE resta comunque valida.
